@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindYourFood</title>
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="glass-container">
+        <div class="login-box">
+            <form method="POST">
+                <h2>Login</h2>
+                <br><p style="color: red;">{{error}}</p>
+                <input class ="data" type="text" name="username" placeholder="Username" required><br>
+                <input class="data" type="password" name="password" placeholder="Password" required><br>
+                <button class="data" type="submit">Submit</button>
+                <p>Don't have an account yet? <a href="/sign">Sign up</a> now!</p>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

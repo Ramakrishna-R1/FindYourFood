@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindYourFood</title>
+    <link href="{{ url_for('static', filename='styledisp.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <img src="{{details['image']}}",height=30>
+    <h2>{{details['title']}}</h2>
+    <p><b>Cooking time: </b>{{details['readyInMinutes']}}</p>
+    <p><b>Vegetarian: </b>{{details['vegetarian']}}</p>
+    <p><b>Gluten free: </b>{{details['glutenFree']}}</p>
+    <h4><b>Ingredients:</b></h4>
+    <ul>
+        {% for ingredient in details['extendedIngredients'] %}
+            <li>{{ingredient['original']}}</li>
+        {% endfor %}
+    </ul>
+    <h4><b>Instructions:</b></h4>
+    <p>{{details['instructions']}}</p>
+    <p><b>Servings: </b>{{details['servings']}}</p>
+</body>
+</html>

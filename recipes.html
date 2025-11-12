@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindYourFood</title>
+    <link href="{{ url_for('static', filename='stylerec.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <p><b>Recipes:</b></p>
+    <ul>
+        {% for recipe in recipes %}
+            <li><a href="/details/{{recipe.id}}">{{recipe.title}}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

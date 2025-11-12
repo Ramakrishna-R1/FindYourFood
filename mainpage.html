@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FindYourFood</title>
+    <link href="{{ url_for('static', filename='styleMain.css') }}" rel="stylesheet"/>
+</head>
+<body>
+    <p>Enter comma separated ingredients:</p>
+    <div class="container">
+        <br>
+        <form action="/main" class="search-bar" method="POST">
+            <input type="text" placeholder="ingredients" name="ingredients">
+            <button type="submit" class="Submit"><img src= "{{ url_for('static', filename='search_icon.png') }}" height="50px"></button>
+        </form>
+        <br>
+        <span class="ortext">or</span>
+        <span class="ortext">Time in minutes:</span>
+        <br>
+        <form action="/main" class="search-bar" method="POST">
+            <input type="text" placeholder="time" name="time">
+            <button type="submit" class="Submit"><img src= "{{ url_for('static', filename='search_icon.png') }}" height="50px"></button>
+        </form>
+    </div>
+</body>
+</html>
